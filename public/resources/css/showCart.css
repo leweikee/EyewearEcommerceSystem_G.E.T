@@ -1,0 +1,96 @@
+.delete:hover path {
+    fill: red;
+}
+
+.cart-checkbox input[type="checkbox"] {
+    display: none; /* Hide the default checkbox */
+}
+
+.cart-checkbox label {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    background-color: transparent; /* Transparent background by default */
+    display: inline-block;
+    cursor: pointer;
+    border: 1px solid; /* Border to create a checkbox-like appearance */
+}
+
+.cart-checkbox label::after {
+    content: '\2713'; /* Unicode checkmark character */
+    font-size: 14px;
+    color: #fff; /* Set the color of the checkmark to white */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0; /* Initially make the checkmark transparent */
+}
+
+.cart-checkbox input[type="checkbox"]:checked + label {
+    background-color: #574f44; /* Change background color when checked */
+    border-color: #574f44; /* Change border color when checked */
+}
+
+.cart-checkbox input[type="checkbox"]:checked + label::after {
+    opacity: 1; /* Make the checkmark visible when checked */
+    color: #fff; /* Set the color of the checkmark to white */
+}
+
+.sticky-bottom {
+    background-color: #57544F; 
+    width: 100%; 
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 1); 
+}
+
+.sticky-bottom h4,
+.sticky-bottom a {
+    color: #fff; 
+}
+
+.all-checkbox input[type="checkbox"] {
+    display: none; /* Hide the default checkbox */
+}
+
+.all-checkbox label {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    background-color: transparent; /* Transparent background by default */
+    display: inline-block;
+    cursor: pointer;
+    border: 1px solid #fff; /* Border to create a checkbox-like appearance */
+}
+
+.all-checkbox label::after {
+    content: '\2713'; /* Unicode checkmark character */
+    font-size: 18px;
+    font-weight: bold;
+    color: #574f44; /* Set the color of the checkmark to white */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0; /* Initially make the checkmark transparent */
+}
+
+.all-checkbox input[type="checkbox"]:checked + label {
+    background-color: #fff; /* Change background color when checked to white */
+    border-color: #fff; /* Change border color when checked to white */
+}
+
+.all-checkbox input[type="checkbox"]:checked + label::after {
+    opacity: 1; /* Make the checkmark visible when checked */
+    color: #574f44; /* Set the color of the checkmark to white */
+}
+
+button[type="submit"].checkout-btn {
+    background-color: #fff;
+}
+
+button[type="submit"].checkout-btn:hover {
+    background-color: #ea8f7b !important;
+}

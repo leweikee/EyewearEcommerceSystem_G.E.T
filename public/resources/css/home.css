@@ -1,0 +1,94 @@
+.pic {
+    width: 100%;
+    height: 675px;
+    border-radius: 0;
+}
+
+#carouselExample {
+    width: 100%;
+    height:675px;
+    display: flex;
+    justify-content: center;
+}
+
+/* custom.css */
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    color: black;
+    width: 30px; /* Adjust the width as needed */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 10%; /* Adjust the width as needed */
+}
+
+
+.wrapper {
+    width: 100%;
+    height: 675px;
+
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
+section {
+    width: 100%;
+    height: 675px;
+    scroll-snap-align: start;
+}
+
+.category-cont {
+    width: 100%;
+    height: 675px;
+    display: flex;
+}
+
+.cont2 {
+    width: 80%;
+    height: 90%;
+    margin: auto;
+}
+
+.cat-title {
+    display: block;
+    text-align: center;
+    width: 100%;
+    padding-top: 15px;
+    font-size: 50px;
+}
+
+.cat-title h1 {
+    font-size: 50px;
+    padding-bottom: 30px;
+}
+
+.category {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 75%;
+}
+
+.sunglasses, .contact-lens {
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sunglasses p, .contact-lens p {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.sunglasses {
+    border-right: 1px solid black; /* Add a right border to separate elements */
+    
+}
+

@@ -1,0 +1,94 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /*background-color: #362F27;*/
+  display: flex;
+}
+
+li {
+  height: 80px;
+  /* width: 14.285%; */
+  /*float: left;*/
+  width: calc(100%/7);
+}
+
+li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  height: 80px;
+  /* ! */
+  width: 100%;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+
+/* svg {
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  display: block;
+  margin: auto;
+  text-align: center
+} */
+
+.navbar-cont {
+  height: 80px;
+  background-color: #362F27;
+  width: 100%;
+  margin: 0px;
+}
+
+.logo {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+}
+
+body {
+  margin: 0;
+}
+
+.dropdown {
+display: none;
+position: absolute;
+background-color: #333; /* Dropdown background color */
+box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+/* width: 14.285%; */
+/* ! */
+width: calc(100%/7);
+z-index: 999;
+}
+
+.dropdown li {
+float: none;
+width: 100%;
+}
+
+.dropdown a {
+display: flex;
+text-align: center;
+text-decoration: none;
+color: white;
+width: 100%;
+}
+
+.dropdown a:hover {
+background-color: #111; /* Hover background color */
+width: 100%;
+}
+
+/* Show dropdown on hover */
+li:hover .dropdown {
+display: block;
+
+}

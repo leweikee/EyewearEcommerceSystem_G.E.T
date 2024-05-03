@@ -1,0 +1,28 @@
+/*login and register css*/
+.form {
+    margin-top: 50px;
+    font-size: 20px; 
+    padding: 50px;
+    border:  white;
+    background-color: #e0dac8;
+    border-radius: 20px;
+}
+
+.input-group {
+    position: relative;
+    width: 100%;
+}
+
+
+.input-group {
+    position: relative;
+    width: 100%;
+}
+
+.label-username {
+    margin-bottom: 5px; /* 添加下外边距以和下面的输入框分隔开 */
+}
+
+.input-group-text {
+    width: 40px; /* 调整图标容器宽度 */
+}

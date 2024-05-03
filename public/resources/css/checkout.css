@@ -1,0 +1,33 @@
+.dropdown-menu {
+    width: auto;
+}
+
+.dropdown-item {
+    padding: 5px;
+}
+
+.form-check-ratio {
+    color: black;
+    font-size: 14px; /* Adjust the font size as needed */
+}
+
+.form-check-input {
+    width: 16px;
+    height: 16px;
+}
+
+.form-check-input:checked + .form-check-label {
+    color: white;
+    background-color: #007bff; /* Change to the desired color on selection */
+}
+
+/* Change text color to black on hover */
+.dropdown-item:hover .form-check-ratio {
+    color: #fff;
+}
+
+/* Set a max-height for the dropdown to enable scrolling */
+.dropdown-menu {
+    overflow-y: auto;
+}
+
