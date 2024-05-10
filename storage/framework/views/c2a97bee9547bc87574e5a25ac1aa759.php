@@ -42,7 +42,7 @@
                         </svg>
                         <?php if(count($cart) > 0): ?>
                         <span class="position-relative translate-middle badge border border-light rounded-circle bg-danger p-1" style="width: 22px; height: 22px;">
-                            <span><?php echo e($cart->sum('quantity')); ?></span> <!-- Change here to count the number of items -->
+                            <span><?php echo e(count($cart)); ?></span> <!-- Change here to count the number of items -->
                         </span>
                         <?php endif; ?>
                     </a>

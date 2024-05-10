@@ -188,13 +188,6 @@
                         <input type="hidden" name="checkoutItem" value="<?php echo e(json_encode($checkoutItem)); ?>">
                         <input type="hidden" name="selectedAddressID" id="selectedAddressID" value="" data-address-id="<?= $deliveryAdd->addressID ?>">
                         <input type="hidden" name="power[]" value="<?php echo e($selectItem->powers); ?>" class="form-control">
-                        <!-- <script>
-    console.log(selectedAddress); // Check if selectedAddress is defined and contains data
-    document.getElementById('saddressID').value = selectedAddress.addressID;
-    console.log(document.getElementById('saddressID').value);
-</script> -->
-
-
                     </div>
                 </div>
                 <div class="row my-2 px-3">

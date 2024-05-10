@@ -67,27 +67,6 @@ class AdminController extends Controller
 
     }
 
-    // public function viewReport() {
-
-    //     $itemCategories = ['sunglasses', 'contactlens'];
-
-    //     $categoryQuantities = [];
-
-    //     foreach ($itemCategories as $category) {
-    //         $totalQuantity = OrderedItem::whereHas('item', function ($query) use ($category) {
-    //             $query->where('category', $category);
-    //         })->sum('Quantity');
-        
-    //         // dd($totalQuantity); // Add this line for debugging
-        
-    //         $categoryQuantities[$category] = $totalQuantity;
-    //     }
-
-    //     $brand = Brands::all();
-
-    //     return view('admin.report', compact('categoryQuantities'));
-    // }
-
     public function viewReport() {
         // Categories
         $itemCategories = ['sunglasses', 'contactlens'];

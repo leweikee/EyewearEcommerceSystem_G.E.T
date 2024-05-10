@@ -184,3 +184,5 @@ Route::get('/viewOrders/{orderID}', [Controller::class, 'viewOrderDetail'])->nam
 Route::post('/updateCancelOrder/{orderID}', [Controller::class, 'updateCancelOrder']);
 
 Route::post('/updateCompleteOrder/{orderID}', [Controller::class, 'updateCompleteOrder']);
+
+Route::get('/home', [HomeController::class, 'new_arrival'])->name('home');

@@ -16,7 +16,9 @@
         crossorigin="anonymous"></script>
     <script src="{{ asset('/resources/js/showCart.js') }}"></script>
 </head>
-
+<script>
+    
+</script>
 <body>
     <div class="sticky-top">
         @auth
@@ -34,7 +36,6 @@
 
     <!-- Shopping Cart Header -->
     <div class="container">
-        <hr class="mb-5">
 
         @if(session('success'))
         <div id="success-alert" class="alert alert-success">
@@ -68,7 +69,12 @@
                 }, 3000);
             };
         </script>
+    </div>
 
+    <!-- check if the cart is empty or not -->
+    @if ($cart->isNotEmpty())
+    <div class="container">
+        <hr class="mb-5">
         <div
             class="row text-center mx-0 p-3 mb-3"
             style="background-color: #574f44; color: #fff; font-family: Georgia, serif;">
@@ -78,10 +84,7 @@
             <div class="col-md-2">SUBTOTAL</div>
         </div>
     </div>
-
-    <!-- check if the cart is empty or not -->
-    @if ($cart->isNotEmpty())
-    <div class="container mb-5">
+    <div class="container mb-5 pb-5">
         @foreach($cart->sortByDesc('updated_at') as $cartItem)
         @php
         $item = \App\Models\Item::find($cartItem->Product_id);
@@ -137,10 +140,9 @@
             <!-- quantity -->
             <div class="col-md-2 d-flex align-items-center" style="justify-content: center;">
             <form action="{{ url('/update_cart/' . $cartItem->id) }}" method="POST"
-                    class="update-cart-form">
+                    class="update-cart-form justify-content-center">
                     @csrf
-                    <div class="rounded-pill"
-                        style="width: 70%; background-color: white; border: 1px solid black; overflow: hidden;">
+                    <div class="rounded-pill" style="width: 100%; background-color: white; border: 1px solid black; overflow: hidden;">
                         <div class="d-flex align-items-center quantity">
                             <input type="hidden" name="quantity" class="hidden-quantity"
                                 value="{{ $cartItem->quantity }}">
@@ -194,8 +196,7 @@
                 <div class="col-md-4 d-flex justify-content-end align-items-center">
                     <!-- Section to show the number of checkbox checked and sum up the subtotal -->
                     <h4 class="me-4 mb-0">Total: <span id="totalAmount">RM 0.00</span></h4>
-                    <form action="{{ route('checkout', ['selectedItems' => implode(',', $selectedItemIds)]) }}"
-                        method="get" class="checkout-form">
+                    <form action="{{ route('checkout', ['selectedItems' => implode(',', $selectedItemIds)]) }}" method="get" class="checkout-form">
                         @csrf
                         @foreach($selectedItemIds as $itemId)
                         <input type="hidden" name="selectedItems[]" value="{{ $itemId }}">

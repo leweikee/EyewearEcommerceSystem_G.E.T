@@ -22,7 +22,7 @@
         <?php endif; ?>
     </div>
 
-        <button type="button" class="mt-4 ms-5" onclick="redirectToHome()" style="background: none;">
+        <button type="button" class="mt-4 ms-5" onclick="redirectToHome()" style="background: none; border: none;">
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" class="bi bi-arrow-return-left" viewBox="0 0 16 16" style="color: #4a4135;" >
             <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5"/>
             </svg>
@@ -121,7 +121,7 @@
         </div>
 
         <div class="d-flex justify-content-center">
-            <input type="submit" value="Add Product" class="btn btn-lg justify-content-center fw-bold px-3 py-2" style="background-color: #4a4135;"  onmouseover="this.style.backgroundColor='#211d17'; this.style.color='#fff';" onmouseout="this.style.backgroundColor='#4a4135';"></button>
+            <input type="submit" value="Add Product" class="btn-sm justify-content-center px-5 py-2 mt-4" style="background-color: #4a4135;"  onmouseover="this.style.backgroundColor='#211d17'; this.style.color='#fff';" onmouseout="this.style.backgroundColor='#4a4135';"></button>
         </div>
         </form>
     </div>

@@ -296,7 +296,6 @@ class HomeController extends Controller
         $promoItems = Item::whereNotNull('disPrice')->paginate(12);
 
         return view('promotion', compact('promoItems'));
-
     }
 
 }

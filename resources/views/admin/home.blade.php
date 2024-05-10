@@ -41,7 +41,6 @@
             width: 15%;
             padding: 10px;
         }
-
     </style>
     </head>
 
@@ -60,22 +59,26 @@
 
         <!-- <hr> -->
         <div class="container">
-        <h1 class="text-center pt-4">Overview</h1>
+        <h1 class="text-center pt-5">Overview</h1>
         
-        <div class="row">
+        <div class="row mt-5">
             <div class="col-md-3">
-                <div class="card card-body bg-primary text-white mb-3">
-                    <label>Total Orders</label>
-                    <h1>{{$totalOrder}}</h1>
-                    <a href="{{route('admin.manageOrders')}}" class="text-white mb-3">View</a>
+                <div class="card card-body d-flex text-white mb-3 text-center py-5" style="background-color: #362f27; opacity: 0.6;" 
+                    onmouseover="this.style.opacity=1;" onmouseout="this.style.opacity=0.6;">
+                    <a href="{{route('admin.manageOrders')}}" class="text-white align-items-center justify-content-center" style="text-decoration: none;">
+                        <label>Total Orders</label>
+                        <h1>{{$totalOrder}}</h1>
+                    </a>
                 </div>
             </div>
 
             <div class="col-md-3">
-                <div class="card card-body bg-primary text-white mb-3">
-                    <label>Today Orders</label>
-                    <h1>{{$todayOrder}}</h1>
-                    <a href="{{route('admin.manageOrders')}}" class="text-white mb-3">View</a>
+                <div class="card card-body d-flex text-white mb-3 text-center py-5" style="background-color: #362f27; opacity: 0.6;" 
+                    onmouseover="this.style.opacity=1;" onmouseout="this.style.opacity=0.6;">
+                    <a href="{{route('admin.manageOrders')}}" class="text-white align-items-center justify-content-center" style="text-decoration: none;">
+                        <label>Today Orders</label>
+                        <h1>{{$todayOrder}}</h1>
+                    </a>
                 </div>
             </div>
         <!-- </div> -->
@@ -84,31 +87,35 @@
 
         <!-- <div class="row"> -->
              <div class="col-md-3">
-                <div class="card card-body bg-primary text-white mb-3">
-                    <label>Total Products</label>
-                    <h1>{{$totalProducts}}</h1>
-                    <a href="{{route('admin.showProducts')}}" class="text-white mb-3">View</a>
+                <div class="card card-body d-flex text-white mb-3 text-center py-5" style="background-color: #362f27; opacity: 0.6;" 
+                    onmouseover="this.style.opacity=1;" onmouseout="this.style.opacity=0.6;">
+                    <a href="{{route('admin.manageProducts')}}" class="text-white align-items-center justify-content-center" style="text-decoration: none;">
+                        <label>Total Products</label>
+                        <h1>{{$totalProducts}}</h1>
+                    </a>
                 </div>
             </div>
 
             <div class="col-md-3">
-                <div class="card card-body bg-primary text-white mb-3">
-                    <label>Total Brands</label>
-                    <h1>{{$totalBrands}}</h1>
-                    <a href="{{route('admin.manageBrands')}}" class="text-white mb-3">View</a>
+                <div class="card card-body d-flex text-white mb-3 text-center py-5" style="background-color: #362f27; opacity: 0.6;" 
+                    onmouseover="this.style.opacity=1;" onmouseout="this.style.opacity=0.6;">
+                    <a href="{{route('admin.manageBrands')}}" class="text-white align-items-center justify-content-center" style="text-decoration: none;">
+                        <label>Total Brands</label>
+                        <h1>{{$totalBrands}}</h1>
+                    </a>
                 </div>
             </div>
         </div>
-        <hr>
-        <h1 class="text-center pt-2 pb-3">Functions</h1>
+        <hr class="container mb-5">
+        <h1 class="text-center pt-2 pb-3 mb-5">Functions</h1>
         <div class="func">
-        <button type="button" class="btn btn-danger b2" onclick="redirectToManageProduct()">Manage Product</button>
-        <button type="button" class="btn btn-danger b2" onclick="redirectToManageBrand()">Manage Brand</button>
+        <button type="button" class="btn btn-success b2 px-5 py-2" onclick="redirectToManageProduct()">Manage Product</button>
+        <button type="button" class="btn btn-success b2 px-5 py-2" onclick="redirectToManageBrand()">Manage Brand</button>
         <!-- new changes -->
-        <button type="button" class="btn btn-danger b2" onclick="redirectToManageOrders()">Orders</button>
-        <button type="button" class="btn btn-danger b2" onclick="redirectToManageReport()">Report</button>
-        <button type="button" class="btn btn-danger b2" onclick="redirectToManagePromotion()">Promotion</button>
-        <button type="button" class="btn btn-danger b2" onclick="redirectToManageFAQ()">FAQ</button>
+        <button type="button" class="btn btn-success b2 px-5 py-2" onclick="redirectToManageOrders()">Orders</button>
+        <button type="button" class="btn btn-success b2 px-5 py-2" onclick="redirectToManageReport()">Report</button>
+        <!-- <button type="button" class="btn btn-danger b2" onclick="redirectToManagePromotion()">Promotion</button> -->
+        <!-- <button type="button" class="btn btn-danger b2" onclick="redirectToManageFAQ()">FAQ</button> -->
         </div>
 
         <hr>

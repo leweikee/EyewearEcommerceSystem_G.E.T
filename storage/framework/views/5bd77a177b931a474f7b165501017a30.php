@@ -16,7 +16,9 @@
         crossorigin="anonymous"></script>
     <script src="<?php echo e(asset('/resources/js/showCart.js')); ?>"></script>
 </head>
-
+<script>
+    
+</script>
 <body>
     <div class="sticky-top">
         <?php if(auth()->guard()->check()): ?>
@@ -34,7 +36,6 @@
 
     <!-- Shopping Cart Header -->
     <div class="container">
-        <hr class="mb-5">
 
         <?php if(session('success')): ?>
         <div id="success-alert" class="alert alert-success">
@@ -70,7 +71,12 @@
                 }, 3000);
             };
         </script>
+    </div>
 
+    <!-- check if the cart is empty or not -->
+    <?php if($cart->isNotEmpty()): ?>
+    <div class="container">
+        <hr class="mb-5">
         <div
             class="row text-center mx-0 p-3 mb-3"
             style="background-color: #574f44; color: #fff; font-family: Georgia, serif;">
@@ -80,10 +86,7 @@
             <div class="col-md-2">SUBTOTAL</div>
         </div>
     </div>
-
-    <!-- check if the cart is empty or not -->
-    <?php if($cart->isNotEmpty()): ?>
-    <div class="container mb-5">
+    <div class="container mb-5 pb-5">
         <?php $__currentLoopData = $cart->sortByDesc('updated_at'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cartItem): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <?php
         $item = \App\Models\Item::find($cartItem->Product_id);
@@ -140,10 +143,9 @@
             <!-- quantity -->
             <div class="col-md-2 d-flex align-items-center" style="justify-content: center;">
             <form action="<?php echo e(url('/update_cart/' . $cartItem->id)); ?>" method="POST"
-                    class="update-cart-form">
+                    class="update-cart-form justify-content-center">
                     <?php echo csrf_field(); ?>
-                    <div class="rounded-pill"
-                        style="width: 70%; background-color: white; border: 1px solid black; overflow: hidden;">
+                    <div class="rounded-pill" style="width: 100%; background-color: white; border: 1px solid black; overflow: hidden;">
                         <div class="d-flex align-items-center quantity">
                             <input type="hidden" name="quantity" class="hidden-quantity"
                                 value="<?php echo e($cartItem->quantity); ?>">
@@ -198,8 +200,7 @@
                 <div class="col-md-4 d-flex justify-content-end align-items-center">
                     <!-- Section to show the number of checkbox checked and sum up the subtotal -->
                     <h4 class="me-4 mb-0">Total: <span id="totalAmount">RM 0.00</span></h4>
-                    <form action="<?php echo e(route('checkout', ['selectedItems' => implode(',', $selectedItemIds)])); ?>"
-                        method="get" class="checkout-form">
+                    <form action="<?php echo e(route('checkout', ['selectedItems' => implode(',', $selectedItemIds)])); ?>" method="get" class="checkout-form">
                         <?php echo csrf_field(); ?>
                         <?php $__currentLoopData = $selectedItemIds; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $itemId): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <input type="hidden" name="selectedItems[]" value="<?php echo e($itemId); ?>">

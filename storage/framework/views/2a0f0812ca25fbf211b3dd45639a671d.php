@@ -27,19 +27,23 @@
             <h1 class="fw-bold">MANAGE PRODUCTS</h1>
         </div>
         
-        <div class="d-flex align-items-center justify-content-center">
+        <div class="align-items-center justify-content-center mx-5" style="background-color: $f9f9f6">
             <div class="card text-center p-5 rounded-3">
                 <div class="card-header fs-5 px-5 py-3 fw-semibold">
                     Please choose your desired action
                 </div>
                 <div class="card-body row mt-3">
                     <div class="col-6">
-                    <button type="button" class="btn fs-5 mb-3 p-3" onclick="redirectToAddProduct()" style="background-color: #362F27; width: 100%; height: 100%" onmouseover="this.style.backgroundColor='#736656'; this.style.color='#fff';" onmouseout="this.style.backgroundColor='#362F27';">
+                    <button type="button" class="btn fs-5 mb-3 p-3" onclick="redirectToAddProduct()" 
+                        style="background-color: #362f27; color: #fff; width: 100%; height: 100%; opacity: 0.6"  
+                        onmouseover="this.style.backgroundColor='#362f27'; this.style.opacity=1; this.style.transition='0.4s ease'; this.style.color='#fff';" onmouseout="this.style.backgroundColor='#362f27'; this.style.opacity=0.6">
                         Add Product
                     </button>
                     </div>
                     <div class="col-6">
-                    <button type="button" class="btn mb-3 p-3 fs-5" onclick="redirectToViewProduct()" style="background-color: #362F27; width: 100%; height: 100%" onmouseover="this.style.backgroundColor='#736656'; this.style.color='#fff';" onmouseout="this.style.backgroundColor='#362F27';">
+                    <button type="button" class="btn mb-3 p-3 fs-5" onclick="redirectToViewProduct()" 
+                        style="background-color: #362f27; color: #fff; width: 100%; height: 100%; opacity: 0.6"  
+                        onmouseover="this.style.backgroundColor='#362f27'; this.style.opacity=1; this.style.transition='0.4s ease'; this.style.color='#fff';" onmouseout="this.style.backgroundColor='#362f27'; this.style.opacity=0.6">
                         View/Edit/Delete Product
                     </button>
                 </div>

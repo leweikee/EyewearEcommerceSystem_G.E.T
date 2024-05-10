@@ -50,9 +50,9 @@
         </div> -->
 
         <div class="container mb-3 g-4">
-            <hr class="mb-3">
+            <hr class="mb-5">
             
-            <div>
+            <div class="mb-4">
             <nav>
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
                     <button class="nav-link active b1" id="nav-all-order-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">All Order</button>
@@ -63,19 +63,17 @@
                     <!-- <button class="nav-link" id="nav-disabled-tab" data-bs-toggle="tab" data-bs-target="#nav-disabled" type="button" role="tab" aria-controls="nav-disabled" aria-selected="false" disabled>Disabled</button> -->
                 </div>
             </nav>
-                <div class="tab-content" id="nav-all-order-tab">
+            </div>
+                <div class="tab-content shadow" id="nav-all-order-tab">
                 <!-- sec 1 -->
                 <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
                 <table class="table">
                     <tbody>
-                        <tr>
+                        <tr class="text-center align-items-center">
                             <td scope="col" colspan="2" class="w-50">Product(s)</td>
                             <td scope="col" class="text-center" style="width: 16% !important" >Quantity</td>
                             <td scope="col" class="text-center"  style="width: 16% !important" >Total Price</td>
                             <td scope="col" class="text-center" style="width: 16% !important" >Status</td>
-                            <!-- <td scope="col" class="w-auto" style="width: 16% !important">Total Price</td>
-                            <td scope="col" class="w-auto" style="width: 16% !important">Status</td> -->
-                            <!-- <td scope="col" class="w-auto" style="width: 16% !important">Action</td> -->
                         </tr>
                     </tbody>
                 </table>
@@ -83,14 +81,14 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                        <th colspan="3" scope="col" class="w-50">{{ $x->deliveryAddress->recipientName }}</th>
-                        <th colspan="3" scope="col" class="w-50 text-end pr-5">OrderID: {{ $x->orderID }}</th>
+                        <th colspan="3" scope="col" class="w-50 ps-5">{{ $x->deliveryAddress->recipientName }}</th>
+                        <th colspan="3" scope="col" class="w-50 text-end pr-5 pe-3">OrderID: {{ $x->orderID }}</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach($x->orderItems as $y)
-                        <tr>
-                            <td scope="col" class="w-50">
+                        <tr class="mb-3 rounded shadow" style="background-color: #f9f9f6">
+                            <td scope="col" class="w-50 ps-5">
                                 <div style="display:flex;">
                                 <div class="inline-block" style="width: 80px !important"><img src="{{ asset('product/' . $y->item->image) }}" alt="Product Image" width="80"></div>
                                 <div class="d-inline" style="width: 388px !important">
@@ -101,7 +99,7 @@
                                         @endif
                                     </div>
                                 </div>
-        </div>
+                            </div>
                             </td>
                             <td scope="col" class="text-center" style="width: 16% !important" ><p> {{ $y->Quantity }} </p></td>
                             <td scope="col" class="text-center" style="width: 16% !important" >
@@ -115,7 +113,8 @@
                             </tr>
                             @endforeach
                             <tr>
-                                <td scope="col" colspan="5"><span class="h5">Total Amount:</span><span class="text-danger h5">RM {{ number_format($x->total_price, 2) }}</span><a href="{{ route('admin.showOrderDetails',$x->orderID) }}" class="btn btn-primary btn-lg active float-sm-end" role="button" aria-pressed="true">View Details</a></td>
+                                <td scope="col" colspan="5" class="ps-5"><span class="h5">Total Amount: </span><span class="text-danger h5 ps-2">RM {{ number_format($x->total_price, 2) }}</span>
+                                <a href="{{ route('admin.showOrderDetails',$x->orderID) }}" class="btn btn-primary btn-sm px-4 py-1 me-4 active float-sm-end" role="button" aria-pressed="true">View Details</a></td>
                             </tr>
                         
                     </tbody>
@@ -127,14 +126,11 @@
                 <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
                 <table class="table">
                     <tbody>
-                        <tr>
+                        <tr class="text-center align-items-center">
                             <td scope="col" colspan="2" class="w-50">Product(s)</td>
                             <td scope="col" class="text-center" style="width: 16% !important" >Quantity</td>
                             <td scope="col" class="text-center"  style="width: 16% !important" >Total Price</td>
                             <td scope="col" class="text-center" style="width: 16% !important" >Status</td>
-                            <!-- <td scope="col" class="w-auto" style="width: 16% !important">Total Price</td>
-                            <td scope="col" class="w-auto" style="width: 16% !important">Status</td> -->
-                            <!-- <td scope="col" class="w-auto" style="width: 16% !important">Action</td> -->
                         </tr>
                     </tbody>
                 </table>
@@ -143,15 +139,15 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                        <th colspan="3" scope="col" class="w-50">{{ $x->deliveryAddress->recipientName }}</th>
-                        <th colspan="3" scope="col" class="w-50 text-end pr-5">OrderID: {{ $x->orderID }}</th>
+                        <th colspan="3" scope="col" class="w-50 ps-5">{{ $x->deliveryAddress->recipientName }}</th>
+                        <th colspan="3" scope="col" class="w-50 text-end pr-5 pe-3">OrderID: {{ $x->orderID }}</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach($x->orderItems as $y)
                         
-                        <tr>
-                            <td scope="col" class="w-50">
+                        <tr class="mb-3 rounded shadow" style="background-color: #f9f9f6">
+                            <td scope="col" class="w-50 ps-5">
                                 <div style="display:flex;">
                                 <div class="inline-block" style="width: 80px !important"><img src="{{ asset('product/' . $y->item->image) }}" alt="Product Image" width="80"></div>
                                 <div class="d-inline" style="width: 388px !important">
@@ -177,10 +173,10 @@
                             
                             @endforeach
                             <tr>
-                                <td scope="col" colspan="5"><span class="h5">Total Amount:</span><span class="text-danger h5">RM {{ number_format($x->total_price, 2) }}</span>
+                                <td scope="col" colspan="5" class="ps-5"><span class="h5">Total Amount: </span><span class="text-danger h5 ps-2">RM {{ number_format($x->total_price, 2) }}</span>
                                 <span class="float-sm-end">
-                                <a href="{{ route('admin.showOrderDetails',$x->orderID) }}" class="btn btn-primary btn-lg active m-2" role="button" aria-pressed="true">View Details</a>
-                                <a class="btn btn-primary btn-lg active m-2" role="button" onclick="ship({{ $x->orderID }})" aria-pressed="true">Order Shipped</a></td></span>
+                                <a href="{{ route('admin.showOrderDetails',$x->orderID) }}" class="btn btn-primary btn-sm px-4 py-1 me-4 active m-2" role="button" aria-pressed="true">View Details</a>
+                                <a class="btn btn-warning btn-sm px-4 py-1 me-4 active m-2" role="button" onclick="ship({{ $x->orderID }})" aria-pressed="true">Order Shipped</a></td></span>
                             </tr> 
                         
                     </tbody>
@@ -224,14 +220,11 @@
                 <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
                 <table class="table">
                     <tbody>
-                        <tr>
+                        <tr class="text-center align-items-center">
                             <td scope="col" colspan="2" class="w-50">Product(s)</td>
                             <td scope="col" class="text-center" style="width: 16% !important" >Quantity</td>
                             <td scope="col" class="text-center"  style="width: 16% !important" >Total Price</td>
                             <td scope="col" class="text-center" style="width: 16% !important" >Status</td>
-                            <!-- <td scope="col" class="w-auto" style="width: 16% !important">Total Price</td>
-                            <td scope="col" class="w-auto" style="width: 16% !important">Status</td> -->
-                            <!-- <td scope="col" class="w-auto" style="width: 16% !important">Action</td> -->
                         </tr>
                     </tbody>
                 </table>
@@ -240,15 +233,15 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                        <th colspan="3" scope="col" class="w-50">{{ $x->deliveryAddress->recipientName }}</th>
-                        <th colspan="3" scope="col" class="w-50 text-end pr-5">OrderID: {{ $x->orderID }}</th>
+                        <th colspan="3" scope="col" class="w-50 ps-5">{{ $x->deliveryAddress->recipientName }}</th>
+                        <th colspan="3" scope="col" class="w-50 text-end pr-5 pe-3">OrderID: {{ $x->orderID }}</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach($x->orderItems as $y)
                         
-                        <tr>
-                            <td scope="col" class="w-50">
+                        <tr class="mb-3 rounded shadow" style="background-color: #f9f9f6">
+                            <td scope="col" class="w-50 ps-5">
                                 <div style="display:flex;">
                                 <div class="inline-block" style="width: 80px !important"><img src="{{ asset('product/' . $y->item->image) }}" alt="Product Image" width="80"></div>
                                 <div class="d-inline" style="width: 388px !important">
@@ -273,10 +266,10 @@
                             </tr>
                             
                             @endforeach
-                            <tr>
-                                <td scope="col" colspan="5"><span class="h5">Total Amount:</span><span class="text-danger h5">RM {{ number_format($x->total_price, 2) }}</span>
+                            <tr class="align-items-center">
+                                <td scope="col" colspan="5" class="ps-5"><span class="h5">Total Amount: </span><span class="text-danger h5 ps-2">RM {{ number_format($x->total_price, 2) }}</span>
                                 <span class="float-sm-end">
-                                <a href="{{ route('admin.showOrderDetails',$x->orderID) }}" class="btn btn-primary btn-lg active m-2" role="button" aria-pressed="true">View Details</a>
+                                <a href="{{ route('admin.showOrderDetails',$x->orderID) }}" class="btn btn-primary btn-sm px-4 py-1 me-4m active m-2" role="button" aria-pressed="true">View Details</a>
                             </tr> 
                         
                     </tbody>
@@ -287,16 +280,13 @@
                 <!-- <div class="tab-pane fade" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab" tabindex="0">Tab 4</div> -->
                  <!-- sec 4 -->
                  <div class="tab-pane fade" id="nav-completed" role="tabpanel" aria-labelledby="nav-completed-tab" tabindex="0">
-                    <table class="table">
+                 <table class="table">
                     <tbody>
-                        <tr>
+                        <tr class="text-center align-items-center">
                             <td scope="col" colspan="2" class="w-50">Product(s)</td>
                             <td scope="col" class="text-center" style="width: 16% !important" >Quantity</td>
                             <td scope="col" class="text-center"  style="width: 16% !important" >Total Price</td>
                             <td scope="col" class="text-center" style="width: 16% !important" >Status</td>
-                            <!-- <td scope="col" class="w-auto" style="width: 16% !important">Total Price</td>
-                            <td scope="col" class="w-auto" style="width: 16% !important">Status</td> -->
-                            <!-- <td scope="col" class="w-auto" style="width: 16% !important">Action</td> -->
                         </tr>
                     </tbody>
                 </table>
@@ -305,15 +295,15 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                        <th colspan="3" scope="col" class="w-50">{{ $x->deliveryAddress->recipientName }}</th>
-                        <th colspan="3" scope="col" class="w-50 text-end pr-5">OrderID: {{ $x->orderID }}</th>
+                        <th colspan="3" scope="col" class="w-50 ps-5">{{ $x->deliveryAddress->recipientName }}</th>
+                        <th colspan="3" scope="col" class="w-50 text-end pr-5 pe-3">OrderID: {{ $x->orderID }}</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach($x->orderItems as $y)
                         
-                        <tr>
-                            <td scope="col" class="w-50">
+                        <tr class="mb-3 rounded shadow" style="background-color: #f9f9f6">
+                            <td scope="col" class="w-50 ps-5">
                                 <div style="display:flex;">
                                 <div class="inline-block" style="width: 80px !important"><img src="{{ asset('product/' . $y->item->image) }}" alt="Product Image" width="80"></div>
                                 <div class="d-inline" style="width: 388px !important">
@@ -339,10 +329,10 @@
                             
                             @endforeach
                             <tr>
-                                <td scope="col" colspan="5"><span class="h5">Total Amount:</span><span class="text-danger h5">RM {{ number_format($x->total_price, 2) }}</span>
+                                <td scope="col" colspan="5" class="ps-5"><span class="h5">Total Amount: </span><span class="text-danger h5 ps-2">RM {{ number_format($x->total_price, 2) }}</span>
                                 <span class="float-sm-end">
-                                <a href="{{ route('admin.showOrderDetails',$x->orderID) }}" class="btn btn-primary btn-lg active m-2" role="button" aria-pressed="true">View Details</a>
-                                <a class="btn btn-success btn-lg active m-2 disabled" role="button" >Order Completed</a></td></span>
+                                <a href="{{ route('admin.showOrderDetails',$x->orderID) }}" class="btn btn-primary btn-sm px-4 py-1 me-4 active m-2" role="button" aria-pressed="true">View Details</a>
+                                <a class="btn btn-success btn-sm px-4 py-1 me-4 active m-2 disabled" role="button" >Order Completed</a></td></span>
                             </tr> 
                         
                     </tbody>
@@ -357,14 +347,11 @@
                 <div class="tab-pane fade" id="nav-cancelled" role="tabpanel" aria-labelledby="nav-cancelled-tab" tabindex="0">
                 <table class="table">
                     <tbody>
-                        <tr>
+                        <tr class="text-center align-items-center">
                             <td scope="col" colspan="2" class="w-50">Product(s)</td>
                             <td scope="col" class="text-center" style="width: 16% !important" >Quantity</td>
                             <td scope="col" class="text-center"  style="width: 16% !important" >Total Price</td>
                             <td scope="col" class="text-center" style="width: 16% !important" >Status</td>
-                            <!-- <td scope="col" class="w-auto" style="width: 16% !important">Total Price</td>
-                            <td scope="col" class="w-auto" style="width: 16% !important">Status</td> -->
-                            <!-- <td scope="col" class="w-auto" style="width: 16% !important">Action</td> -->
                         </tr>
                     </tbody>
                 </table>
@@ -373,15 +360,15 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                        <th colspan="3" scope="col" class="w-50">{{ $x->deliveryAddress->recipientName }}</th>
-                        <th colspan="3" scope="col" class="w-50 text-end pr-5">OrderID: {{ $x->orderID }}</th>
+                        <th colspan="3" scope="col" class="w-50 ps-5">{{ $x->deliveryAddress->recipientName }}</th>
+                        <th colspan="3" scope="col" class="w-50 text-end pr-5 pe-3">OrderID: {{ $x->orderID }}</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach($x->orderItems as $y)
                         
-                        <tr>
-                            <td scope="col" class="w-50">
+                        <tr class="mb-3 rounded shadow" style="background-color: #f9f9f6">
+                            <td scope="col" class="w-50 ps-5">
                                 <div style="display:flex;">
                                 <div class="inline-block" style="width: 80px !important"><img src="{{ asset('product/' . $y->item->image) }}" alt="Product Image" width="80"></div>
                                 <div class="d-inline" style="width: 388px !important">
@@ -407,9 +394,9 @@
                             
                             @endforeach
                             <tr>
-                                <td scope="col" colspan="5"><span class="h5">Total Amount:</span><span class="text-danger h5">RM {{ number_format($x->total_price, 2) }}</span>
+                                <td scope="col" colspan="5" class="ps-5"><span class="h5">Total Amount: </span><span class="text-danger h5 ps-2">RM {{ number_format($x->total_price, 2) }}</span>
                                 <span class="float-sm-end">
-                                <a href="{{ route('admin.showOrderDetails',$x->orderID) }}" class="btn btn-primary btn-lg active m-2" role="button" aria-pressed="true">View Details</a>
+                                <a href="{{ route('admin.showOrderDetails',$x->orderID) }}" class="btn btn-primary btn-sm px-4 py-1 me-4 active m-2" role="button" aria-pressed="true">View Details</a>
                             </tr> 
                         
                     </tbody>

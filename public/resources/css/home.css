@@ -43,6 +43,7 @@ section {
     width: 100%;
     height: 675px;
     display: flex;
+    background-size: cover;
 }
 
 .cont2 {
@@ -89,6 +90,8 @@ section {
 
 .sunglasses {
     border-right: 1px solid black; /* Add a right border to separate elements */
-    
+    position: relative;
+    text-align: center;
+    color: white;
+    overflow: hidden; /* Hide overflowing parts of the image */
 }
-
